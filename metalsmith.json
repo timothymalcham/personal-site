@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "Personal Site",
+    "description": "..."
+  },
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-templates": {
+      "engine": "handlebars"
+    }
+  }
+}
