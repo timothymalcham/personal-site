@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "metalsmith": "^1.7.0",
-    "metalsmith-markdown": "^0.2.1"
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0"
   }
 }
