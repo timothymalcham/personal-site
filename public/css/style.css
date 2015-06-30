@@ -42,3 +42,9 @@ small,
 .font-small {
   font-size: 0.75rem;
 }
+
+.container {
+  width: 92%;
+  max-width: 600px;
+  margin: 0 auto;
+}
