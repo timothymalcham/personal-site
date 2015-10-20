@@ -43,8 +43,6 @@
       color: #830600;
       font-style: italic;
       padding-bottom: .25rem;
-/*      border-bottom: 1px solid #830600;
-      display: inline-block;*/
       margin-bottom: 1.3rem;
     }
 
@@ -54,7 +52,10 @@
 
     h4 {font-size: 1.5em;}
 
-    small, .font-very-small {font-size: 0.667em;}
+    small, .font-very-small {
+      font-size: 0.667em;
+      vertical-align: middle;
+    }
 
     .container {
       max-width: 30rem;
@@ -79,15 +80,21 @@
 <div class="container">
   <h1 class="title">I’m Tim Malcham.</h1>
   <p>
-    I work as a Front End Engineer at <a href="designcommission.com">
+    I work as a Front End Engineer at <a href="http://designcommission.com">
     Design Commission</a> in Seattle. Most of my time at work is spent head’s
-    down writing code (Javascript: Angular, Node, React, etc.), but despite that
-    I care deeply about users, UI/UX design, and keeping projects healthy.
+    down writing code <small>(Javascript: Angular, Node, React, etc.)</small>, but despite that
+    I care deeply about users, <small>UI + UX</small> design, and keeping projects healthy.
   </p>
   <p>
-    When I’m not at work, I’m probably baking pizza, drinking scotch or black tea,
-    reading a long book, planning a D&D campaign, playing my Jazzmaster, drawing
-    dinosaurs, leveling up in Destiny, or exploring the Pacific Northwest.
+    When I’m not at work, I’m probably baking pizza, drinking scotch or tea,
+    planning a D&D campaign, drawing dinosaurs, playing a Jazzmaster, or
+    exploring the Pacific Northwest.
+  </p>
+  <p>
+    Get in touch with me at <a href="mailto:timothymalcham@gmail.com">
+    timothymalcham@gmail.com</a>. You view some of the code that I write at
+    <a href="https://github.com/timothymalcham">GitHub</a>. Thanks for stopping
+    by <small>:)</small>
   </p>
 </div>
 </body>
