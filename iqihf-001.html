@@ -18,46 +18,44 @@
     question asked and provide the correct answering and why that answer is the
     correct one. My hope is to have a deeper understanding of the concept the
     interview question was based around, and maybe help someone else out.
-  <p>
+  </p>
   <p>
     This first question isn't one I really 'failed', per se. I got through about
     75% of the question and tripped over a few parts of it. The question was all
     about scope in JavaScript, which is super important to have a solid grasp of
     if you write JavaScript regurarly, so I wanted to go back and make sure I really
     understood each part of the question well.
-  <p>
+  </p>
 
   <p>The Question:</p>
 
-  <pre>
-    <code>
-      (function() {
-        var x = 1;
-        function test() {
-          console.log('First log statement: ', x);
-          x = 2;
-        }
-        (function(x) {
-          x = 3;
-          console.log('Second log statement: ', x);
-          test();
-          console.log('Third log statement: ', x);
-        }());
-        console.log('Fourth log statement: ', x);
-        (function() {
-          console.log('Fifth log statement: ', x);
-          var x = 4;
-          console.log('Sixth log statement: ', x);
-        }());
-        console.log('Seventh log statement: ', x);
-      }())
-    </code>
-  </pre>
+  <pre><code data-language="javascript">(function() {
+  var x = 1;
+  function test() {
+    console.log('First log statement: ', x);
+    x = 2;
+  }
+  (function(x) {
+    x = 3;
+    console.log('Second log statement: ', x);
+    test();
+    console.log('Third log statement: ', x);
+  }());
+  console.log('Fourth log statement: ', x);
+  (function() {
+    console.log('Fifth log statement: ', x);
+    var x = 4;
+    console.log('Sixth log statement: ', x);
+  }());
+  console.log('Seventh log statement: ', x);
+}())</code></pre>
 
 
 
 <!--   <h2 class="title">Blog</h2>
   <i>Coming Soon …</i> -->
+
+  <script src="js/rainbow.min.js"></script>
 
 </div>
 </body>
