@@ -12,6 +12,17 @@
   <h1 class="title">Interview Questions I've Failed, 001 (JavaScript Scope)</h1>
 
   <p>
+    I have a history of failing technical interviews. During the interview, whether
+    it's over the phone or in person, I get sweaty palms, my mind goes blank, and
+    I start thinking about how I might go about switching careers to something
+    that doesn't involve memorizing a thousand different things. But after those
+    interviews, I usually walked out knowing something new. Sometimes interviewers
+    are entirely unhelpful when it comes to giving feedback and helping you out
+    when you simply don't know something, but at the very least I ended up with a stronger
+    desire to become a better programmer, and therefore, a better engineer.
+  <p>
+
+  <p>
     I'm writing a series of posts on questions I've been asked during interviews
     that I did not answer correctly, or I may have stumbled through the question
     without having a full understanding of the answer. I'll be reviewing the
@@ -136,6 +147,20 @@
     their parent's variables is a powerful part of JS, so I'd recommend learning
     <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36#.gl5jqubrk">
     more about it.</a>
+  </p>
+
+  <p class="title">Line 6</p>
+
+  <pre><code data-language="javascript">console.log('First log statement: ', x);</code></pre>
+
+  <p>
+    Our first <code>console.log</code> statement! One important thing to note here.
+    Scroll back up and look at the output we got when the entire program was ran.
+    The "First log statement" didn't actually get printed out first, it got
+    printed out after the second one! This is because the first log statement is
+    inside of a function declaration that hasn't been invoked / called yet
+    (spoiler alert: this won't happen until line 13). We'll come back to this
+    line later, since it won't actually run until later.
   </p>
 
 

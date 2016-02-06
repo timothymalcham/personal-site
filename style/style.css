@@ -65,9 +65,9 @@ small, .font-very-small {
 }
 
 a {
-  transition: all .35s ease-in-out;
   color: #B3942D;
   text-decoration: none;
+  border-bottom: 1px solid #B3942D;
 }
 
 a:hover,
