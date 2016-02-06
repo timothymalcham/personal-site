@@ -27,28 +27,54 @@
     understood each part of the question well.
   </p>
 
-  <p>The Question:</p>
+  <p class="title">The Question:</p>
+
+  <p>
+    Given this block of code, when it is run, what will each <code>console.log</code>
+    statement print out?
+  </p>
 
   <pre><code data-language="javascript">(function() {
+
   var x = 1;
+
   function test() {
     console.log('First log statement: ', x);
     x = 2;
   }
+
   (function(x) {
     x = 3;
-    console.log('Second log statement: ', x);
+    console.log('Second log statement:', x);
     test();
-    console.log('Third log statement: ', x);
-  }());
-  console.log('Fourth log statement: ', x);
+    console.log('Third log statement:', x);
+  }(x));
+
+  console.log('Fourth log statement:', x);
+
   (function() {
-    console.log('Fifth log statement: ', x);
+    console.log('Fifth log statement:', x);
     var x = 4;
-    console.log('Sixth log statement: ', x);
+    console.log('Sixth log statement:', x);
   }());
-  console.log('Seventh log statement: ', x);
+
+  console.log('Seventh log statement:', x);
+
 }())</code></pre>
+
+  <p>
+    If you run this code in your browser's developer tools console, you will get
+    this output:
+  </p>
+
+  <code><pre>
+  Second log statement: 3
+  First log statement: 1
+  Third log statement: 3
+  Fourth log statement: 2
+  Fifth log statement: undefined
+  Sixth log statement: 4
+  Seventh log statement: 2</pre></code>
 
 
 
