@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Timothy Malcham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Interview Questions I've Failed, 001 (JavaScript Scope)</h1>
+
+  <p>
+    I'm writing a series of posts on questions I've been asked during interviews
+    that I did not answer correctly, or I may have stumbled through the question
+    without having a full understanding of the answer. I'll be reviewing the
+    question asked and provide the correct answering and why that answer is the
+    correct one. My hope is to have a deeper understanding of the concept the
+    interview question was based around, and maybe help someone else out.
+  </p>
+  <p>
+    This first question isn't one I really 'failed', per se. I got through about
+    75% of the question and tripped over a few parts of it. The question was all
+    about scope in JavaScript, which is super important to have a solid grasp of
+    if you write JavaScript regurarly, so I wanted to go back and make sure I really
+    understood each part of the question well.
+  </p>
+
+  <p>The Question:</p>
+
+  <pre><code data-language="javascript">(function() {
+  var x = 1;
+  function test() {
+    console.log('First log statement: ', x);
+    x = 2;
+  }
+  (function(x) {
+    x = 3;
+    console.log('Second log statement: ', x);
+    test();
+    console.log('Third log statement: ', x);
+  }());
+  console.log('Fourth log statement: ', x);
+  (function() {
+    console.log('Fifth log statement: ', x);
+    var x = 4;
+    console.log('Sixth log statement: ', x);
+  }());
+  console.log('Seventh log statement: ', x);
+}())</code></pre>
+
+
+
+<!--   <h2 class="title">Blog</h2>
+  <i>Coming Soon …</i> -->
+
+  <script src="js/rainbow.min.js"></script>
+
+</div>
+</body>
+</html>
