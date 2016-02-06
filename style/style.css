@@ -38,6 +38,10 @@ h1 {
   margin-bottom: 1.3rem;
 }
 
+p + .title {
+  margin-top: 2.25rem;
+}
+
 .center {
   text-align: center;
   margin: 2.5rem auto;

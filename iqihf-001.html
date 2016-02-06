@@ -15,9 +15,9 @@
     I'm writing a series of posts on questions I've been asked during interviews
     that I did not answer correctly, or I may have stumbled through the question
     without having a full understanding of the answer. I'll be reviewing the
-    question asked and provide the correct answering and why that answer is the
-    correct one. My hope is to have a deeper understanding of the concept the
-    interview question was based around, and maybe help someone else out.
+    question asked and provide the correct answer and why it is correct. My hope
+    is to have a deeper understanding of the concept the interview question was
+    based around, and hopefully help someone else out in the process.
   </p>
   <p>
     This first question isn't one I really 'failed', per se. I got through about
@@ -98,6 +98,47 @@
     still create a new execution context, which defines a scope for variables
     and other functions to live in.
   </p>
+
+  <p class="title">Line 1</p>
+
+  <pre><code data-language="javascript">(function() {</code></pre>
+
+  <p>
+    Let’s get started on the actual question though. On line 1, we have an IIFE
+    that encapsulates our entire program, creating an execution context for
+    everything else to live inside of. Simple enough, let's move on.
+  </p>
+
+  <p class="title">Line 3</p>
+
+  <pre><code data-language="javascript">var x = 1;</code></pre>
+
+  <p>
+    A variable is declared, and a value of <code>1</code> is assigned to it.
+    Nothing super exciting yet, but the real action starts soon.
+  </p>
+
+  <p class="title">Line 5</p>
+
+  <pre><code data-language="javascript">function test() {</code></pre>
+
+  <p>
+    A function is declared within the IIFE. We call it test and pass no arguments
+    to it. We have another JS concept to introduce, which happens to be a very
+    important part of the language – <i>closures</i>.
+  </p>
+
+  <p>
+    A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">
+    closure</a> is a function that gets declared within the scope (execution context)
+    of another function. A closure gets access to variables that were declared
+    within the scope of its parent. The fact that inner functions get access to
+    their parent's variables is a powerful part of JS, so I'd recommend learning
+    <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36#.gl5jqubrk">
+    more about it.</a>
+  </p>
+
+
 
 
 
