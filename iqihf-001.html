@@ -60,7 +60,7 @@
 
   console.log('Seventh log statement:', x);
 
-}())</code></pre>
+}());</code></pre>
 
   <p>
     If you run this code in your browser's developer tools console, you will get
@@ -75,6 +75,29 @@
   Fifth log statement: undefined
   Sixth log statement: 4
   Seventh log statement: 2</pre></code>
+
+  <p>
+    Let’s go through this line by line and learn why we get this output.
+  </p>
+
+  <p>
+    One note before we get started talking about scope. You might notice that
+    some of the above functions look a bit strange, like this:
+  </p>
+
+  <pre><code data-language="javascript">(function(x) {
+  // function code goes here…
+}(x));</code></pre>
+
+  <p>
+    These are Immediately-Invoked Function Expressions or IIFEs. They're a bit
+    self explanatory, they are functions that run (get invoked) immediately as
+    soon as the parser reaches it when your program is getting executed. This
+    unlike a function that gets declared and then called later on. Both happens at
+    the same time with IIFEs. But like other ways of creating a function, IIFEs
+    still create a new execution context, which defines a scope for variables
+    and other functions to live in.
+  </p>
 
 
 
