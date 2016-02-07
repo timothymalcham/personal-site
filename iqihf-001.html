@@ -160,10 +160,95 @@
     printed out after the second one! This is because the first log statement is
     inside of a function declaration that hasn't been invoked / called yet
     (spoiler alert: this won't happen until line 13). We'll come back to this
-    line later, since it won't actually run until later.
+    line (and line 7) later, since it won't actually run until later.
   </p>
 
+  <p class="title">Line 10</p>
 
+  <pre><code data-language="javascript">(function(x) {</code></pre>
+
+  <p>
+    Another IIFE, which like <code>test</code> above, is a function, and because
+    it's nested within another function (the outer IIFE), it's a closure. It's
+    also getting passed an argument, <code>x</code>. You can think of the IIFE's
+    <code>x</code> as its own special <code>x</code>. In this case, it's not the
+    same variable as the one defined in the outer scope. But the argument does get
+    assigned the value of the outer variable <code>x</code>, as seen on line 15:
+  </p>
+
+  <pre><code data-language="javascript">}(x));</code></pre>
+
+  <p>
+    So what will the argument <code>x</code> be? Well, we know that <code>var x</code>
+    was assigned the value 1, so we know that the argument will have the value
+    of 1 as well.
+  </p>
+
+  <p class="title">Line 11</p>
+
+  <pre><code data-language="javascript">x = 3;</code></pre>
+
+  <p>
+    On line 11 <code>x</code> is being assigned the value 3. Now, <code>x</code>
+    in this case is the argument <code>x</code>, not the outer variable <code>x</code>.
+    Keep that in mind for later. The argument's value is changed and now we arrive at
+    the second log statement.
+  </p>
+
+  <p class="title">Line 12</p>
+
+  <pre><code data-language="javascript">console.log('Second log statement:', x);</code></pre>
+
+  <p>
+    We log the value of x at the current point in the program, and we get <code>3</code>.
+    This is pretty simple to understand, based on line 11.
+  </p>
+
+  <p class="title">Line 13</p>
+
+  <pre><code data-language="javascript">test();</code></pre>
+
+  <p>
+    Now we finally call the function <code>test</code> that we declared earlier
+    on lines 5-8. So now we travel back up to line 6 and execute the code
+    within the function's body:
+  </p>
+
+  <pre><code data-language="javascript">console.log('First log statement: ', x);
+x = 2;</code></pre>
+
+  <p>
+    The log statment on line 6 fires, printing 1. <code>test</code> is being invoked
+    within the inner IIFE, but it was declared in the outer one. Because <code>test</code>
+    is a closure and has access to the variables within its parent's scope, it
+    grabs the variable <code>x</code> and prints it out, giving us 1. Then on
+    line 7, <code>test</code> is going to assign a new value to that outer
+    variable, 2. At this point, <code>test</code> is done executing.
+  </p>
+
+  <p class="title">Line 14</p>
+
+  <pre><code data-language="javascript">console.log('Third log statement:', x);</code></pre>
+
+  <p>
+    We return to the first nested IIFE, and the third log statement fires, giving
+    us 3 again. Remember, this nested IIFE isn't logging the outer variable
+    <code>x</code>, it's logging out its argument, <code>x</code>, which has not
+    been altered in any way. We've already covered line 15, so we're all finished
+    with this nested IIFE.
+  </p>
+
+  <p class="title">Line 17</p>
+
+  <pre><code data-language="javascript">console.log('Fourth log statement:', x);</code></pre>
+
+  <p>
+    We're back in the immediate scope of the parent IIFE that is first declared on
+    line 1. The fourth log statement fires and gives us 2. Remember, the function
+    <code>test</code> fired just a few lines back, and within that function, the
+    outer variable <code>x</code> was given the value of 2, which is what we see
+    here.
+  </p>
 
 
 
