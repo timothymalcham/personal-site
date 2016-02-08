@@ -343,7 +343,86 @@ x = 2;</code></pre>
     them is essential to working with JavaScript in a sane and effective manner.
   </p>
 
+  <p class="title">Bonus: ES6 / ES2015</p>
 
+  <p>
+    The way scope in JavaScript behaves changes a bit when you introduce new
+    language features like <code>let</code>. <code>let</code> declares <i>block scope</i>
+    variables, as opposed to <i>function scope</i> variables, like <code>var</code>
+    does. If you're curious, here's the original question rewritten ES6-style.
+    You still get same output as the ES5 code.
+  </p>
+
+  <pre><code data-language="javascript">(() => {
+
+  let x = 1;
+
+  function test() {
+    console.log('First log statement:', x);
+    x = 2;
+  }
+
+  ((x) => {
+    x = 3;
+    console.log('Second log statement:', x);
+    test();
+    console.log('Third log statement:', x);
+  })(x);
+
+  console.log('Fourth log statement:', x);
+
+  (() => {
+    console.log('Fifth log statement:', x);
+    let x = 4;
+    console.log('Sixth log statement:', x);
+  })();
+
+  console.log('Seventh log statement:', x);
+
+})();</code></pre>
+
+  <p>
+    Note that you can also change up how the code works by using blocks instead
+    of functions / IIFEs. This does change the output, slightly:
+  </p>
+
+  <pre><code data-language="javascript">{
+  let x = 1;
+
+  function test() {
+    console.log('First log statement:', x);
+    x = 2;
+  }
+
+  {
+    x = 3;
+    console.log('Second log statement:', x);
+    test();
+    console.log('Third log statement:', x);
+  }
+
+  console.log('Fourth log statement:', x);
+
+  {
+    console.log('Fifth log statement:', x);
+    let x = 4;
+    console.log('Sixth log statement:', x);
+  }
+
+  console.log('Seventh log statement:', x);
+}</code></pre>
+
+  <p>Output:</p>
+
+  <pre><code data-language="javascript">Second log statement: 3
+First log statement: 3
+Third log statement: 2
+Fourth log statement: 2
+Fifth log statement: undefined
+Sixth log statement: 4
+Seventh log statement: 2</code></pre>
+
+  <p>For extra credit, you can investigate the 'why' behind this new output.</p>
 
 
 
