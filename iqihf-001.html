@@ -296,7 +296,7 @@ x = 2;</code></pre>
     function name() {}</code>), the variable or function gets 'hoisted' to the
     top of the most immediate scope, which in this case is the top of this nested
     IIFE. The important thing to know is that the assignment doesn't get hoisted,
-    only the declared variable itself. Here's essentially how the parser sees
+    only the declared variable itself. This is essentially how the parser sees
     this block of code:
   </p>
 
@@ -314,7 +314,35 @@ x = 2;</code></pre>
 
   <p class="title">Line 22</p>
 
-  <pre><code data-language="javascript">var x = 4;</code></pre>
+  <pre><code data-language="javascript">console.log('Sixth log statement:', x);</code></pre>
+
+  <p>
+    The sixth log statement prints out 4. This one is straightforward, nothing
+    that special going on after all that hoisting and assignment.
+  </p>
+
+  <p class="title">Line 25</p>
+
+  <pre><code data-language="javascript">console.log('Seventh log statement:', x);</code></pre>
+
+  <p>
+    Let's jump down to the last noteworthy line of our program. The seventh and final
+    log statement gives us 2. This is because this log statement lives in the
+    parent IIFE function scope, where <code>x = 2</code>. The last nested IIFE
+    (the one with the hoisting) declared and worked on a new variable that just
+    also happened to be called x, but yet is unrelated to the the <code>var x</code>
+    that was declared on line 3. All the variables in this program are given the
+    name x purely to make you think hard about each different scope this program
+    has. In a real piece of code, in almost all cases, you wouldn't give a variable
+    the name x and you wouldn't do it multiple times in the same function.
+  </p>
+
+  <p>
+    We've reached the end of the program, and have seen a few idiosyncrasies
+    of JavaScript scope. Knowing these details and understanding the concepts behind
+    them is essential to working with JavaScript in a sane and effective manner.
+  </p>
+
 
 
 
