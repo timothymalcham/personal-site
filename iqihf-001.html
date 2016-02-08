@@ -264,6 +264,59 @@ x = 2;</code></pre>
     here.
   </p>
 
+  <p class="title">Line 19</p>
+
+  <pre><code data-language="javascript">(function() {</code></pre>
+
+  <p>
+    Another nested IIFE. Note that this one doesn't have any arguments.
+  </p>
+
+  <p class="title">Line 20</p>
+
+  <pre><code data-language="javascript">console.log('Fifth log statement:', x);</code></pre>
+
+  <p>
+    The fifth log statement fires, and it tells us that at this point in the program,
+    <code>x</code> is <code>undefined</code>. Wait. Isn't this a closure? Doesn't
+    this IIFE have access to the variables in its parent scope? Shouldn't this log
+    statement log out the same thing as the fourth log statement – 2? Let's go
+    down to line 21 to find out why.
+  </p>
+
+  <p class="title">Line 21</p>
+
+  <pre><code data-language="javascript">var x = 4;</code></pre>
+
+  <p>
+    In the log statement on line 20, we get <code>undefined</code> because this
+    IIFE does have its own <code>var x</code>, which is declared on this line.
+    What we witness on line 20, is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting">
+    hoisting</a>. Whenever you do a declaration (i.e. <code>var</code> or <code>
+    function name() {}</code>), the variable or function gets 'hoisted' to the
+    top of the most immediate scope, which in this case is the top of this nested
+    IIFE. The important thing to know is that the assignment doesn't get hoisted,
+    only the declared variable itself. Here's essentially how the parser sees
+    this block of code:
+  </p>
+
+  <pre><code data-language="javascript">(function() {
+  var x;
+  console.log('Fifth log statement:', x); // x = undefined
+  x = 4;
+  console.log('Sixth log statement:', x); // x = 4
+}());</code></pre>
+
+  <p>
+    The variable gets declared at the top of the immediate scope, but gets assigned
+    on the line where you do the assignment (<code>= 4</code>).
+  </p>
+
+  <p class="title">Line 22</p>
+
+  <pre><code data-language="javascript">var x = 4;</code></pre>
+
+
 
 
 <!--   <h2 class="title">Blog</h2>
