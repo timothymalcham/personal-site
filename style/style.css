@@ -21,7 +21,7 @@ p {
 
 h1, h2, h3, h4 {
   margin: 1.414rem 0 0.5rem;
-  font-weight: inherit;
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -32,10 +32,10 @@ h1 {
 
 .title {
   font-size: 1rem;
-  color: #B3942D;
-  font-style: italic;
+  color: #252525;
   padding-bottom: .25rem;
   margin-bottom: 1.3rem;
+  font-weight: 700;
 }
 
 p + .title {
@@ -70,15 +70,9 @@ small, .font-very-small {
 }
 
 a {
-  color: #B3942D;
+  color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #B3942D;
-}
-
-a:hover,
-a:focus {
-  color: #0E0E0E;
-  border-bottom: 1px solid #0E0E0E;
+  border-bottom: 1px solid #000;
 }
 
 .goodbye-dancing-robot-flourish {
