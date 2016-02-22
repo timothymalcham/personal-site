@@ -30,6 +30,94 @@
   <pre>
     (head) -> (node) -> (node) -> (node) -> (tail)</pre>
 
+  <p>
+    Let's see what a linked list looks like when outputted to a console.
+  </p>
+
+  <pre><code data-language="javascript">let list = new LinkedList();
+list.add(1)
+list.add(2)
+list.add(3)
+console.log(list)</code></pre>
+
+  <p>
+    After running those lines of code this is what we would get:
+  </p>
+
+  <pre><code data-language="javascript">{
+  length: 0,
+  head: {
+    data: 1,
+    next: {
+      data: 2,
+      next: {
+        data: 3,
+        next: null
+      }
+    }
+  }
+}</code></pre>
+
+  <p>
+    Basically just a bunch of nested objects.
+  </p>
+
+  <p>
+    Here's an implementation that we'll walk through.
+  </p>
+
+  <pre><code data-language="javascript">class LinkedList {
+
+  constructor() {
+    // we start with an empty list
+    this.length = 0;
+    // since there are no nodes, there is no head
+    this.head = null;
+  }
+
+  // our first method will allow us to add new nodes to the list
+  // We pass in the data we want to store in the list as an argument
+  add(data) {
+    // we create the node here
+    const node = {
+      data,
+      next: null
+    };
+
+    // we create a variable that will help traverse the list
+    let current;
+
+    // first we need to check if the list is empty or not.
+    // The first time around, the list will be empty.
+
+    if (this.head === null) {
+      // if the list is empty, make the newly created node the head
+      this.head = node;
+    } else {
+      // otherwise, we need to traverse the list, get to the end,
+      // and then attach the newly created node to it.
+
+      // to start traversing, let's start at the beginning of
+      // the list, the head.
+      current = this.head;
+
+      while (current.next) {
+        // as long as nodes are pointing to something behind them,
+        // we need to be traversing.
+        current = current.next;
+      }
+
+      // Once we've reach the end, we attach the newly created node,
+      // behind the currently last node.
+      current.next = node;
+
+      this.length++;
+
+    }
+
+  }
+}</code></pre>
+
 
   <script src="../../js/rainbow.min.js"></script>
 
