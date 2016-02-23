@@ -105,7 +105,45 @@ el.classList.toggle('class-name');
 el.classList.contains('class-name');</code></pre>
 
 
+  <p class="title">Event Listeners</p>
 
+  <p>
+    When building User Interfaces, you'll often need to "listen" for particular
+    user behavior, especially when building custom UI controls like buttons,
+    tabs, accordions, etc.
+  </p>
+
+  <pre><code data-language="javascript">// html:
+// <button class="btn" type="button">Add New Item</button>
+
+// get the element
+let el = document.querySelector('.btn');
+
+// can listen to any of these types:
+// https://developer.mozilla.org/en-US/docs/Web/Events
+// also accepts a callback function to run after event takes place
+el.addEventListener('click', function() {
+  // code to run when the button is clicked…
+})
+
+// you can also remove event listeners
+el.removeEventListener('click', listenerFunction);
+
+// A common thing to do in jQuery is to run code when the document
+// is ready (the page has loaded). Here's how to do it in vanilla JS
+const ready = (fn) => {
+  // check to see if the page is still loading
+  if (document.readyState !== 'loading') {
+    // if the page has loaded, run the supplied function
+    fn();
+  } else {
+    // otherwise, listen for the 'DOMContentLoaded' event and run the
+    // supplied function when it happens
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+ready(functionToRunWhenPageLoads);</code></pre>
 
 
 
