@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Timothy Malcham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+<div class="container">
+
+  <h1 class="title">Interview Questions I've Failed, 005: BST</h1>
+
+  <pre><code data-language="javascript">class bst {
+
+  constructor() {
+    this.root = null;
+  }
+
+  add(value) {
+
+    // create a new node that we'll soon add to the tree
+    let node = {
+      value,
+      left: null,
+      right: null
+    }
+
+    let current;
+
+    if (this.head === null) {
+      this.root = node
+    } else {
+
+      current = this.root
+
+      while (true) {
+
+        if (value < current.value) {
+
+          if (current.left === null) {
+            current.left = node;
+            break;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+
+          if (current.right === null) {
+            current.right = node;
+            break;
+          } else {
+            current = current.right;
+          }
+        } else {
+          break;
+        }
+      }
+    }
+  }
+}
+
+const meow = new bst()
+console.log(meow.add(2))
+console.log(meow.add(4))
+console.log(meow.add(3))
+console.log(meow)
+
+
+{
+  root: {
+    value: 2,
+    left: null,
+    right: {
+      value: 4,
+      left: {
+        value: 3,
+        left: null,
+        right: null
+      },
+      right: null
+    }
+  }
+}</code></pre>
+
+
+  <script src="../../js/rainbow.min.js"></script>
+
+</div>
+</body>
+</html>
