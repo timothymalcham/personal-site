@@ -5,7 +5,7 @@ html {
   font-weight: 400;
   line-height: 1.75;
   color: #fff;
-  background: #19191B url('../img/beach.jpg')  no-repeat;
+  background: linear-gradient(transparent, #363437 250%), url('../img/water.jpg') no-repeat, #353436;
 }
 
 body {
@@ -69,7 +69,7 @@ small, .font-very-small {
 .container {
   max-width: 40rem;
   width: 92%;
-  margin: 70rem auto 10rem;
+  margin: 65rem auto 10rem;
 }
 
 a {
