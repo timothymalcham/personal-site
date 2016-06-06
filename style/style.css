@@ -31,7 +31,7 @@ h1 {
   font-size: 1rem;
   padding-bottom: .25rem;
   margin-bottom: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 p + .title {
@@ -66,17 +66,13 @@ small, .font-very-small {
 .container {
   max-width: 40rem;
   width: 92%;
-  margin: 2rem auto;
+  margin: 4rem auto;
 }
 
 a {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
-}
-
-.goodbye-dancing-robot-flourish {
-  margin-top: 10rem;
 }
 
 
