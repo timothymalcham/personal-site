@@ -64,9 +64,25 @@ small, .font-very-small {
 }
 
 .container {
-  max-width: 40rem;
-  width: 92%;
+  overflow: hidden;
   margin: 4rem auto;
+  max-width: 1000px;
+  width: 92%;
+}
+
+.col {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.col-l {
+  width: 25%;
+  float: left;
+}
+
+.col-r {
+  width: 75%;
+  float: left;
 }
 
 a {
