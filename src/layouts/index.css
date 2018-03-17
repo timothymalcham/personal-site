@@ -1,5 +1,22 @@
+/* @import must be at top of file, otherwise CSS will not work */
+/* @import url("/count/361291"); */
+
+@font-face {font-family: 'SonnyGothic-Bold';src: url('./webfonts/361291_0_0.eot');src: url('./webfonts/361291_0_0.eot?#iefix') format('embedded-opentype'),url('./webfonts/361291_0_0.woff2') format('woff2'),url('./webfonts/361291_0_0.woff') format('woff'),url('./webfonts/361291_0_0.ttf') format('truetype');}
+@font-face {font-family: 'SonnyGothic-Regular';src: url('./webfonts/361291_1_0.eot');src: url('./webfonts/361291_1_0.eot?#iefix') format('embedded-opentype'),url('./webfonts/361291_1_0.woff2') format('woff2'),url('./webfonts/361291_1_0.woff') format('woff'),url('./webfonts/361291_1_0.ttf') format('truetype');}
+
+.SonnyGothic-Bold { 
+	font-family: SonnyGothic-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.SonnyGothic-Regular { 
+	font-family: SonnyGothic-Regular;
+	font-weight: normal;
+	font-style: normal;
+}
+
 html {
-  font-family: sans-serif;
+  background: -webkit-linear-gradient(45deg, rgb(201, 23, 91), rgb(72, 25, 133));
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -198,7 +215,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: SonnyGothic-Bold;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -621,4 +638,14 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.intro {
+  margin: 6rem 0;
+  font-size: 3rem;
+  line-height: 1.5;
+  color: #fff;
+  /* background: -webkit-linear-gradient(45deg, rgb(168, 24, 79), rgb(72, 25, 133)); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
