@@ -22,6 +22,8 @@ html {
   border-image-slice: 1;
   text-size-adjust: 100%;
   font-family: SonnyGothic-Regular;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 body {
   margin: 0;
