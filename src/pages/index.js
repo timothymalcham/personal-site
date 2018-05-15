@@ -4,6 +4,7 @@ import haScreenshot from '../layouts/img/ha.png'
 import oeScreenshot from '../layouts/img/oe.jpg'
 import gmScreenshot from '../layouts/img/gm.gif'
 import readingAppScreenshot from '../layouts/img/reading-app.png'
+import seaScreenshot from '../layouts/img/sea.png'
 
 const IndexPage = () => (
   <div className='container'>
@@ -78,6 +79,12 @@ const IndexPage = () => (
       <img className='section__image' src={ haScreenshot } alt='Screenshot of Holland America account page' />
       <h2 className='section__title'>Customer Account</h2>
       <h3 className='section__sub-title'>Holland America Group — React, PostCSS, AEM, Node.js</h3>
+    </section>
+
+    <section className='section__work'>
+      <img className='section__image' src={ seaScreenshot } alt='Screenshot of Seabourn Cruise Line Interactive Destination Map' />
+      <h2 className='section__title'>Cruise Destinations</h2>
+      <h3 className='section__sub-title'>Seabourn Cruise Line — Angular.js, D3.js, LESS</h3>
     </section>
 
     <section className='section__work'>
