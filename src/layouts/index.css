@@ -18,7 +18,7 @@
 html {
   background: #fff;
   border: 20px solid transparent;
-  border-image: linear-gradient(45deg, rgb(141, 0, 59), rgb(96, 54, 151));
+  border-image: linear-gradient(90deg, rgb(141, 0, 59), rgb(96, 54, 151));
   border-image-slice: 1;
   text-size-adjust: 100%;
   font-family: SonnyGothic-Regular;
@@ -638,13 +638,64 @@ pre tt:after {
   }
 }
 
-.intro {
-  margin: 4rem 0;
-  font-size: 3vw;
-  line-height: 1.5;
-  color: hsla(0, 0%, 0%, 0.8);;
-  background: -webkit-linear-gradient(45deg, rgb(168, 24, 79), rgb(72, 25, 133));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: SonnyGothic-Bold, serif;
+.section__header {
+  font-size: .85rem;
+  font-family: SonnyGothic-Bold;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+
+.section__sub-title {
+  font-size: 16px;
+  font-family: SonnyGothic-Regular;
+  font-weight: 400;
+}
+
+section p {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 360px) {
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .intro { 
+    margin: 4rem 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: hsla(0, 0%, 0%, 0.8);
+    background: linear-gradient(45deg, rgb(168, 24, 79), rgb(72, 25, 133));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: SonnyGothic-Bold, serif;
+  }
+
+  section {
+    margin-bottom: 3.25rem;
+  }
+
+  .section__image {
+    margin-top: .5rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .intro {
+    font-size: 3vw;
+  }
 }
