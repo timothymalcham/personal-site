@@ -49,17 +49,19 @@ const IndexPage = () => (
 
     <p className='section__header'>Education:</p>
 
-    <section className='section__career'>
-      <h2 className='section__title'>Code Fellows</h2>
-      <h3 className='section__sub-title'>October 2013 – December 2013</h3>
-      <p>Participated in an eight-week long software engineering program. Learned JavaScript language fundamentals, software engineering concepts, and how to build full-stack JS apps.</p>
-    </section>
+    <div className='grid'>
+      <section className='section__career'>
+        <h2 className='section__title'>Code Fellows</h2>
+        <h3 className='section__sub-title'>October 2013 – December 2013</h3>
+        <p>Participated in an eight-week long software engineering program. Learned JavaScript language fundamentals, software engineering concepts, and how to build full-stack JS apps.</p>
+      </section>
 
-    <section className='section__career'>
-      <h2 className='section__title'>School of Visual Concepts</h2>
-      <h3 className='section__sub-title'>2011 – 2012</h3>
-      <p>Studied typography, web design, and UX design.</p>
-    </section>
+      <section className='section__career'>
+        <h2 className='section__title'>School of Visual Concepts</h2>
+        <h3 className='section__sub-title'>2011 – 2012</h3>
+        <p>Studied typography, web design, and UX design.</p>
+      </section>
+    </div>
 
     <p className='section__header'>Selected Work:</p>
 
